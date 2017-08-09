@@ -1,0 +1,21 @@
+<h1>Voici toutes les taches pauvre tache</h1>
+<p>Quelle action souhaitez-vous faire?</p>
+
+<%@tasks.each do |task|%>
+  <strong><%=link_to task.name, task_path(task)%></strong>
+
+  <p>
+  la tâche est-elle faite?
+  <strong><%= task.status %></strong>
+  <br>
+  <%=link_to "MAJ", edit_task_path(task)%>
+  <%=link_to "Supprimer" , task_path(task), method: :delete, data: {confirm:  "Tu me supprimes? Moi qui t'ai tant donné!"}%>
+  </p>
+<%end%>
+
+  <%=link_to "Ajouter une tâche", new_task_path%>
+
+
+
+
+

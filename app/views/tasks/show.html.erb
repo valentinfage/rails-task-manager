@@ -1,0 +1,13 @@
+<h1><%=@task.name%></h1>
+  <h3><%=@task.content%></h3>
+  <%if @task.status == false %>
+    <p>Mais qu'est-ce que tu attends pour <%=@task.name%>?!</p>
+  <%else%>
+    <p>Bravo, je suis si fier de toi!</p>
+  <%end%>
+  <p> Tâche créé le: <%=@task.created_at%></p>
+  <br>
+  <br>
+<%=link_to "Toutes les tâches", tasks_path%>
+
+
